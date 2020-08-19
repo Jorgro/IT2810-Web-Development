@@ -1,6 +1,6 @@
 //code from highschool
 var canvas = document.querySelector("#snowmanCanvas");
-var ctx = canvas.getContext("2d");//angir at vi ønsker å tegne i to dimensjoner
+var ctx = canvas.getContext("2d");
 
 ctx.lineWidth = 5;
 ctx.arc(100,200,50,(26/15)*Math.PI,(19/15)*Math.PI);
