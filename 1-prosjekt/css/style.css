@@ -14,6 +14,7 @@
 .horizontal-flex-box{
     display: flex;
     flex-direction: row;
+    margin: 10px 0px 10px 0px;
 }
 
 h3{
@@ -24,6 +25,10 @@ h3{
 .bottomtext{
     display: flex;
     align-items: flex-end;
+}
+
+.border{
+    border: 1px solid black;
 }
 
 .item-a {
