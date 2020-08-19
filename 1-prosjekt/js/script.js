@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $("#demo").html("Fuck this");
+    $("#demo").html("I love jQuery <3");
     $("#rect1").bind("mouseover", function(event) {
         $("#rect1").css({
             fill: "red"
