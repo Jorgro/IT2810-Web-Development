@@ -20,10 +20,28 @@
         </svg>
     </div>
 
-    <div style="display: flex; flex-direction: row">
+    <div class="horizontal-flex-box">
+        <!--snowman svg-->
+        <div>
+            <svg width="200" height="260">
+                <circle cx="100" cy="200" r="50" stroke="black" stroke-width="5" fill="white"/>
+                <circle cx="100" cy="140" r="40" stroke="black" stroke-width="5" fill="white"/>
+                <circle cx="100" cy="85" r="20" stroke="black" stroke-width="5" fill="white"/>
+                <circle cx="95" cy="80" r="2" stroke="black" stroke-width="5"/>
+                <circle cx="108" cy="80" r="2" stroke="black" stroke-width="5"/>
+                <polygon points="100,87 100,97 112,92" fill="orange"/>
+            </svg>
+            <h3>SVG</h3>
+        </div>
+        <div class="bottomtext">
+            <h3>vs.</h3>
+        </div>
         <!--snowman canvas-->
-        <canvas id="snowmanCanvas" width="200" height="300"></canvas>
-        <script src="js/snowman.js"></script>
+        <div>
+            <canvas id="snowmanCanvas" width="200" height="260"></canvas>
+            <script src="js/snowman.js"></script>
+            <h3>Canvas</h3>
+        </div>
         <!--the coolest canvas-->
         <canvas id="hermannCanvas" width="300" height="300"></canvas>
         <script src="js/hermann.js"></script>

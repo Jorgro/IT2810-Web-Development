@@ -1,4 +1,3 @@
-//code from highschool
 var canvas = document.querySelector("#snowmanCanvas");
 var ctx = canvas.getContext("2d");
 
