@@ -3,8 +3,18 @@ var ctx = canvas.getContext("2d");
 
 ctx.lineWidth = 5;
 //body
+const lowerBody = {
+    x: 100,
+    y: 145,
+    radius: 50
+}
 ctx.arc(100,145,50,(26/15)*Math.PI,(19/15)*Math.PI);
 ctx.stroke();
+const upperBody = {
+    x: 100,
+    y: 85,
+    radius: 40
+}
 ctx.moveTo(115,45);
 ctx.arc(100,85,40,(24/15)*Math.PI,(21/15)*Math.PI);
 ctx.stroke();
@@ -60,7 +70,19 @@ function intersects(x, y, circle){
     return ((x - circle.x)**2 + (y - circle.y)**2) < circle.radius**2;
 }
 canvas.addEventListener('click', (e) => {
-    if(intersects(e.offsetX, e.offsetY, head)){
-        alert("Clicked!");
+    let mouseX = e.offsetX;
+    let mouseY = e.offsetY;
+    if(intersects(mouseX, mouseY, lowerBody) || (intersects(mouseX, mouseY, upperBody) && !intersects(mouseX, mouseY, head))){
+        //alert("Clicked!");
+        drawDot(mouseX, mouseY);
     }
 });
+function drawDot(x, y){
+    ctx.beginPath();
+    ctx.moveTo(x, y);
+    ctx.arc(x,y,4,0,2*Math.PI);
+    ctx.stroke();
+    ctx.fillStyle = "black";
+    ctx.fill();
+    ctx.closePath();
+}
