@@ -18,16 +18,17 @@ $(document).ready(function() {
             $("body,html").animate({
                     scrollTop: $("#documentationButton").offset().top
                 },
-                'slow');
+                500);
         } else {
-            $("#documentation").css({
-                display: "none"
-            });
-
             $("body,html").animate({
-                    scrollTop: $("#header").offset().top
+                    scrollTop: 0
                 },
                 500);
+            setTimeout(() => {
+                $("#documentation").css({
+                    display: "none"
+                })
+            }, 1000);
         }
     });
 
