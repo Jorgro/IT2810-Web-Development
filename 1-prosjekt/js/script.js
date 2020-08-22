@@ -10,15 +10,22 @@ $(document).ready(function() {
             fill: "black"
         });
     });
+
+    $("#container").css({
+        height: $("body").css("height") + '%',
+        width: $("body").css("width") + '%'
+
+    });
     $("#documentationButton").click(function() {
         if ($("#documentation").css("display") == "none") {
             $("#documentation").css({
-                display: "block"
+                display: "block",
             });
             $("body,html").animate({
                     scrollTop: $("#documentationButton").offset().top
                 },
                 500);
+
         } else {
             $("body,html").animate({
                     scrollTop: 0
@@ -28,7 +35,7 @@ $(document).ready(function() {
                 $("#documentation").css({
                     display: "none"
                 })
-            }, 1000);
+            }, 500);
         }
     });
 
