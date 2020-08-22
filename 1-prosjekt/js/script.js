@@ -11,19 +11,22 @@ $(document).ready(function() {
         });
     });
     $("#documentationButton").click(function() {
-        console.log("Clicked");
         if ($("#documentation").css("display") == "none") {
-            console.log("None");
-
             $("#documentation").css({
                 display: "block"
             });
+            $('html,body').animate({
+                    scrollTop: $("#documentationButton").offset().top
+                },
+                'slow');
         } else {
-            console.log("Display");
-
             $("#documentation").css({
                 display: "none"
             });
+            $('html,body').animate({
+                    scrollTop: $("#documentationButton").offset().top
+                },
+                'slow');
         }
     });
 });
