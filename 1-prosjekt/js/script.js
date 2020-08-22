@@ -30,14 +30,27 @@ $(document).ready(function() {
                 500);
         }
     });
+
+    var originalPosition;
     // Used to make documentation button stick to top when scrolling down!
     $(window).scroll(function() {
-        var button = $('#documentationButton')[0]
-        var sticky = button.offsetTop;
-        if (window.pageYOffset > sticky) {
-            button.classList.add("sticky");
-        } else {
-            button.classList.remove("sticky");
+        /*         if ($(this).scrollTop() & gt; = 290) {
+                    $('').addClass('stickytop');
+                } else {
+                    $('nav.main-nav').removeClass('stickytop');
+                } */
+        var button = $('#documentationButton');
+        var sticky = button.offset().top;
+        console.log("pos", originalPosition);
+        console.log("wow", button.hasClass('sticky'));
+        console.log("window", window.pageYOffset);
+        console.log("sticky", sticky);
+
+        if (window.pageYOffset > sticky && !button.hasClass('sticky')) {
+            button.addClass("sticky");
+            originalPosition = window.pageYOffset;
+        } else if (window.pageYOffset <= originalPosition) {
+            button.removeClass("sticky");
         }
     });
 });
