@@ -15,7 +15,7 @@ $(document).ready(function() {
             $("#documentation").css({
                 display: "block"
             });
-            $('html,body').animate({
+            $("body,html").animate({
                     scrollTop: $("#documentationButton").offset().top
                 },
                 'slow');
@@ -23,10 +23,21 @@ $(document).ready(function() {
             $("#documentation").css({
                 display: "none"
             });
-            $('html,body').animate({
-                    scrollTop: $("#documentationButton").offset().top
+
+            $("body,html").animate({
+                    scrollTop: $("#header").offset().top
                 },
-                'slow');
+                500);
+        }
+    });
+    // Used to make documentation button stick to top when scrolling down!
+    $(window).scroll(function() {
+        var button = $('#documentationButton')[0]
+        var sticky = button.offsetTop;
+        if (window.pageYOffset > sticky) {
+            button.classList.add("sticky");
+        } else {
+            button.classList.remove("sticky");
         }
     });
 });
