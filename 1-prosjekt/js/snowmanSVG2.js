@@ -1,3 +1,7 @@
+import {
+    getRandomColor
+} from "./helpers";
+
 $(document).ready(function() {
     let body = [$("#svgUpperBody"), $("#svgLowerBody")]
     let svgSnowman = $("#svgSnowman");
@@ -20,13 +24,12 @@ $(document).ready(function() {
     }
 
     $("#svgHead").click(function(e) {
-        console.log('fill', $(this).css("fill"))
         if ($(this).css("fill") == "rgb(255, 0, 0)") {
-            $(this).css({
+            $("#svgHead").css({
                 fill: "white"
             });
         } else {
-            $(this).css({
+            $("#svgHead").css({
                 fill: "red"
             });
         }
@@ -53,12 +56,3 @@ $(document).ready(function() {
         clearInterval(interval);
     });
 });
-// from: https://stackoverflow.com/questions/1484506/random-color-generator
-export function getRandomColor() {
-    var letters = '0123456789ABCDEF';
-    var color = '#';
-    for (var i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
-}

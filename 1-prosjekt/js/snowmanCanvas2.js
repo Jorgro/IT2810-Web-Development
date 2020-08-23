@@ -1,6 +1,6 @@
 import {
     getRandomColor
-} from "./snowmanSVG2";
+} from "./helpers";
 
 const head = {
     x: 100,
@@ -83,7 +83,7 @@ $(document).ready(function() {
 
     // Draw the snowman
     drawSnowman();
-    drawCrystals();
+    drawCrystals(false);
 
 
 
@@ -109,7 +109,7 @@ $(document).ready(function() {
     var interval;
     $('#snowmanCanvas').on('mouseenter', function() {
         interval = setInterval(function() {
-            drawCrystals();
+            drawCrystals(true);
         }, 100);
     }).on('mouseleave', function() {
         clearInterval(interval);
@@ -198,7 +198,7 @@ $(document).ready(function() {
         drawHead("white", 1);
     }
 
-    function drawCrystals() {
+    function drawCrystals(random) {
         crystals.forEach((crystal) => {
             ctx.lineWidth = 1;
             ctx.beginPath();
@@ -207,7 +207,12 @@ $(document).ready(function() {
             ctx.lineTo(crystal[2][0], crystal[2][1]);
             ctx.lineTo(crystal[3][0], crystal[3][1]);
             ctx.closePath();
-            ctx.fillStyle = getRandomColor();
+            if (random) {
+                ctx.fillStyle = getRandomColor();
+            } else {
+                ctx.fillStyle = "lightblue";
+
+            }
             ctx.fill();
         })
     }

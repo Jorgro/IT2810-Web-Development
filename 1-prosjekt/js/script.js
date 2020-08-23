@@ -1,16 +1,5 @@
 $(document).ready(function() {
-    $("#demo").html("I love jQuery <3");
-
-    $("#rect1").bind("mouseover", function(event) {
-        $("#rect1").css({
-            fill: "red"
-        });
-    });
-    $("#rect1").bind("mouseout", function(event) {
-        $("#rect1").css({
-            fill: "black"
-        });
-    });
+    $("#demo").html("Mr snowman");
 
     $("#container").css({
         height: $("body").css("height") + '%',
@@ -50,10 +39,6 @@ $(document).ready(function() {
                 } */
         var button = $('#documentationButton');
         var sticky = button.offset().top;
-        console.log("pos", originalPosition);
-        console.log("wow", button.hasClass('sticky'));
-        console.log("window", window.pageYOffset);
-        console.log("sticky", sticky);
 
         if (window.pageYOffset > sticky && !button.hasClass('sticky')) {
             button.addClass("sticky");
