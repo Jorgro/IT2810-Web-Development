@@ -6,6 +6,10 @@
     <link rel="stylesheet" href="css/style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/snowmanSVG2.js"></script>
+    <script src="js/snowmanCanvas2.js"></script>
+
+
 </head>
 
 <body>
@@ -17,13 +21,13 @@
 
             <!--snowman svg-->
             <div class="item-2">
-                <svg width="200" height="200" class="border" id="svgSnowman">
+                <svg width="200" height="200" class="border svg" id="svgSnowman">
                     <!--body-->
                     <circle cx="100" cy="145" r="50" stroke="black" stroke-width="5" fill="white" id="svgLowerBody" />
                     <circle cx="100" cy="85" r="40" stroke="black" stroke-width="5" fill="white" id="svgUpperBody" />
                     <!--head-->
-                    <g id="svgHead">
-                        <circle cx="100" cy="30" r="20" stroke="black" stroke-width="5" fill="white" />
+                    <g>
+                        <circle cx="100" cy="30" r="20" stroke="black" stroke-width="5" fill="white" id="svgHead" />
                         <circle cx="95" cy="25" r="2" stroke="black" stroke-width="5" />
                         <circle cx="108" cy="25" r="2" stroke="black" stroke-width="5" />
                         <polygon points="100,32 100,42 112,37" fill="orange" />
@@ -32,12 +36,23 @@
                     <line x1="65" y1="65" x2="25" y2="45" stroke="black" stroke-width="5" />
                     <line x1="45" y1="55" x2="25" y2="55" stroke="black" stroke-width="5" />
                     <line x1="45" y1="55" x2="30" y2="35" stroke="black" stroke-width="5" />
-                    <!--right arm-->
+                    <!-- right arm-->
                     <line x1="135" y1="65" x2="175" y2="45" stroke="black" stroke-width="5" />
                     <line x1="155" y1="55" x2="175" y2="55" stroke="black" stroke-width="5" />
                     <line x1="155" y1="55" x2="170" y2="35" stroke="black" stroke-width="5" />
+                    <!--ground-->
+                    <rect x="0" y="199" width="200" height="2" style="fill: blue; stroke: blue; stroke-width: 5;"
+                        id="rect1" />
+                    <!--snow crystals-->
+                    <polygon points="5,40 10,50 15,40 10,30" fill="lightskyblue" id="crystal-1" />
+                    <polygon points="13,70 18,80 23,70 18,60" fill="lightskyblue" id="crystal-2" />
+                    <polygon points="5,100 10,110 15,100 10,90" fill="lightskyblue" id="crystal-3" />
+                    <polygon points="25,100 30,110 35,100 30,90" fill="lightskyblue" id="crystal-4" />
+                    <polygon points="25,140 30,150 35,140 30,130" fill="lightskyblue" id="crystal-5" />
+                    <polygon points="180,140 185,150 190,140 185,130" fill="lightskyblue" id="crystal-6" />
+                    <polygon points="180,70 185,80 190,70 185,60" fill="lightskyblue" id="crystal-7" />
+                    <polygon points="160,100 165,110 170,100 165,90" fill="lightskyblue" id="crystal-8" />
                 </svg>
-                <script src="js/snowmansvg.js"></script>
                 <h3>SVG</h3>
             </div>
         </div>
@@ -46,42 +61,41 @@
 
             <div>
                 <canvas id="snowmanCanvas" width="200" height="200" class="border"></canvas>
-                <script src="js/snowmancanvas.js"></script>
                 <h3>Canvas</h3>
             </div>
         </div>
         <div class="item-4 flex-box">
             <button id="documentationButton">Show documentation</button>
         </div>
-    </div>
-    <div class="flex-box" id="documentation">
-        <p> I am documentation </p>
-        <p> I am documentation </p>
-        <p> I am documentation </p>
-        <p> I am documentation </p>
-        <p> I am documentation </p>
-        <p> I am documentation </p>
-        <p> I am documentation </p>
-        <p> I am documentation </p>
-        <p> I am documentation </p>
-        <p> I am documentation </p>
-        <p> I am documentation </p>
-        <p> I am documentation </p>
-        <p> I am documentation </p>
-        <p> I am documentation </p>
-        <p> I am documentation </p>
-        <p> I am documentation </p>
-        <p> I am documentation </p>
-        <p> I am documentation </p>
-        <p> I am documentation </p>
-        <p> I am documentation </p>
-        <p> I am documentation </p>
-        <p> I am documentation </p>
-        <p> I am documentation </p>
-        <p> I am documentation </p>
-        <p> I am documentation </p>
-        <p> I am documentation </p>
+        <div class="item-5 flex-box" id="documentation">
+            <p> I am documentation </p>
+            <p> I am documentation </p>
+            <p> I am documentation </p>
+            <p> I am documentation </p>
+            <p> I am documentation </p>
+            <p> I am documentation </p>
+            <p> I am documentation </p>
+            <p> I am documentation </p>
+            <p> I am documentation </p>
+            <p> I am documentation </p>
+            <p> I am documentation </p>
+            <p> I am documentation </p>
+            <p> I am documentation </p>
+            <p> I am documentation </p>
+            <p> I am documentation </p>
+            <p> I am documentation </p>
+            <p> I am documentation </p>
+            <p> I am documentation </p>
+            <p> I am documentation </p>
+            <p> I am documentation </p>
+            <p> I am documentation </p>
+            <p> I am documentation </p>
+            <p> I am documentation </p>
+            <p> I am documentation </p>
+            <p> I am documentation </p>
+            <p> I am documentation </p>
 
+        </div>
     </div>
 </body>
 

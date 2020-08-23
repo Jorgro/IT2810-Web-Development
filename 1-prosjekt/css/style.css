@@ -3,7 +3,6 @@ body {
     min-height: 100%;
     min-width: 100%;
     margin: 0px;
-    position: relative;
 }
 
 html {
@@ -14,9 +13,9 @@ html {
 .container {
     display: grid;
     grid-template-columns: 50% 50%;
-    grid-template-rows: 0.25fr 1fr 0.25fr;
+    grid-template-rows: 0.25fr 1fr 0.25fr 1000px;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
 }
 
 .item-1 {
@@ -41,6 +40,13 @@ html {
     align-items: flex-end;
 }
 
+.item-5 {
+    grid-column: 1 / span 2;
+    grid-row: 4 / 4;
+    display: flex;
+    align-items: flex-end;
+}
+
 .flex-box {
     display: flex;
     justify-content: center;
@@ -50,9 +56,10 @@ html {
 }
 
 #documentation {
-    top: 1000px;
     height: 30%;
     width: 30%;
+    bottom: 0;
+    display: none;
 }
 
 .horizontal-flex-box {
@@ -69,24 +76,6 @@ p {
     text-align: center;
 }
 
-.container-2 {
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 100%;
-    width: 100%;
-    height: 25%;
-    overflow: auto;
-}
-
-
-/* #documentation {
-    display: none;
-} */
-
-#documentation {
-    display: none;
-}
-
 button {
     background-color: #52b455;
     border: none;
@@ -97,7 +86,6 @@ button {
     font-size: 30px;
     width: 100%;
     height: 40px;
-    margin-bottom: 10px;
 }
 
 .arrow {
