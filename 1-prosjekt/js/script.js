@@ -1,29 +1,50 @@
 $(document).ready(function() {
-    $("#demo").html("Fuck this");
-    $("#rect1").bind("mouseover", function(event) {
-        $("#rect1").css({
-            fill: "red"
-        });
-    });
-    $("#rect1").bind("mouseout", function(event) {
-        $("#rect1").css({
-            fill: "black"
-        });
+    $("#demo").html("Mr snowman");
+
+    $("#container").css({
+        height: $("body").css("height") + '%',
+        width: $("body").css("width") + '%'
+
     });
     $("#documentationButton").click(function() {
-        console.log("Clicked");
         if ($("#documentation").css("display") == "none") {
-            console.log("None");
-
             $("#documentation").css({
-                display: "block"
+                display: "block",
             });
+            $("body,html").animate({
+                    scrollTop: $("#documentationButton").offset().top
+                },
+                500);
+
         } else {
-            console.log("Display");
+            $("body,html").animate({
+                    scrollTop: 0
+                },
+                500);
+            setTimeout(() => {
+                $("#documentation").css({
+                    display: "none"
+                })
+            }, 500);
+        }
+    });
 
-            $("#documentation").css({
-                display: "none"
-            });
+    var originalPosition;
+    // Used to make documentation button stick to top when scrolling down!
+    $(window).scroll(function() {
+        /*         if ($(this).scrollTop() & gt; = 290) {
+                    $('').addClass('stickytop');
+                } else {
+                    $('nav.main-nav').removeClass('stickytop');
+                } */
+        var button = $('#documentationButton');
+        var sticky = button.offset().top;
+
+        if (window.pageYOffset > sticky && !button.hasClass('sticky')) {
+            button.addClass("sticky");
+            originalPosition = window.pageYOffset;
+        } else if (window.pageYOffset <= originalPosition) {
+            button.removeClass("sticky");
         }
     });
 });
