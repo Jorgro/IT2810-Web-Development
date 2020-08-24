@@ -8,6 +8,7 @@ $(document).ready(function() {
     });
     $("#documentationButton").click(function() {
         if ($("#documentation").css("display") == "none") {
+
             $("#documentation").css({
                 display: "block",
             });
@@ -15,6 +16,7 @@ $(document).ready(function() {
                     scrollTop: $("#documentationButton").offset().top
                 },
                 500);
+            $("#documentationButton").html('Hide documentation');
 
         } else {
             $("body,html").animate({
@@ -26,6 +28,8 @@ $(document).ready(function() {
                     display: "none"
                 })
             }, 500);
+            $("#documentationButton").html('Show documentation');
+
         }
     });
 
@@ -47,4 +51,5 @@ $(document).ready(function() {
             button.removeClass("sticky");
         }
     });
+
 });
