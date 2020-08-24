@@ -27,6 +27,8 @@ html {
 .item-1 {
     grid-column: 1 / span 2;
     grid-row: 1 / 1;
+    display: flex;
+    justify-content: center;
 }
 
 .item-2 {
@@ -54,7 +56,6 @@ html {
 .flex-box {
     display: flex;
     justify-content: center;
-    float: left;
     flex-wrap: wrap;
 }
 

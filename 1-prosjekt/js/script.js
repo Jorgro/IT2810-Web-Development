@@ -9,9 +9,7 @@ $(document).ready(function() {
     $("#documentationButton").click(function() {
         if ($("#documentation").css("display") == "none") {
 
-            $("#documentation").css({
-                display: "block",
-            });
+            $("#documentation").show();
             $("body,html").animate({
                     scrollTop: $("#documentationButton").offset().top
                 },
@@ -24,9 +22,7 @@ $(document).ready(function() {
                 },
                 500);
             setTimeout(() => {
-                $("#documentation").css({
-                    display: "none"
-                })
+                $("#documentation").hide();
             }, 500);
             $("#documentationButton").html('Show documentation');
 
