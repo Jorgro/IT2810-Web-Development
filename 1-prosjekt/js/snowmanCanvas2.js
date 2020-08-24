@@ -1,7 +1,3 @@
-import {
-    getRandomColor
-} from "./helpers";
-
 const head = {
     x: 100,
     y: 30,
@@ -222,4 +218,13 @@ $(document).ready(function() {
 // Checks if a point intersects a circle
 function intersects(x, y, circle) {
     return ((x - circle.x) ** 2 + (y - circle.y) ** 2) < circle.radius ** 2;
+}
+
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
 }
