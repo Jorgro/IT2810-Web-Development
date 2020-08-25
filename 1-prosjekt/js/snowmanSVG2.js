@@ -31,11 +31,6 @@ $(document).ready(function() {
         }
     });
 
-    $(".crystal").bind("mouseover", function(event) {
-        $(".crystal").css({
-            fill: getRandomColor()
-        });
-    });
     //$('#someid').attr('name', 'value');
     var interval;
     // Changes color of the crystals

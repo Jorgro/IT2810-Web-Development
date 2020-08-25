@@ -1,11 +1,4 @@
 $(document).ready(function() {
-    $("#demo").html("Mr snowman");
-
-    $("#container").css({
-        height: $("body").css("height") + '%',
-        width: $("body").css("width") + '%'
-
-    });
     $("#documentationButton").click(function() {
         if ($("#documentation").css("display") == "none") {
 
@@ -32,11 +25,6 @@ $(document).ready(function() {
     var originalPosition;
     // Used to make documentation button stick to top when scrolling down!
     $(window).scroll(function() {
-        /*         if ($(this).scrollTop() & gt; = 290) {
-                    $('').addClass('stickytop');
-                } else {
-                    $('nav.main-nav').removeClass('stickytop');
-                } */
         var button = $('#documentationButton');
         var sticky = button.offset().top;
 

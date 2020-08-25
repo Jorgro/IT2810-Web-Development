@@ -102,6 +102,7 @@ $(document).ready(function() {
         }
     });
 
+
     var interval;
     $('#snowmanCanvas').on('mouseenter', function() {
         interval = setInterval(function() {
