@@ -164,11 +164,14 @@ $(document).ready(function() {
     }
 
     function drawBody() {
+
+        //lower body
         ctx.beginPath();
         ctx.arc(lowerBody.x, lowerBody.y, lowerBody.radius, (26 / 15) * Math.PI, (19 / 15) * Math.PI);
         ctx.stroke();
         ctx.closePath();
 
+        //upper body
         ctx.beginPath();
         ctx.moveTo(115, 45);
         ctx.arc(upperBody.x, upperBody.y, upperBody.radius, (24 / 15) * Math.PI, (21 / 15) * Math.PI);

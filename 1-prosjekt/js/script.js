@@ -28,7 +28,6 @@ $(document).ready(function() {
     });
     $("#resetButton").click(function() {
         location.reload(true);
-
     })
 
     var originalPosition;
