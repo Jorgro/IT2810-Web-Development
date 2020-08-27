@@ -1,18 +1,58 @@
-let body = [document.getElementById("svgUpperBody"), document.getElementById("svgLowerBody")]
-let svgSnowman = document.getElementById("svgSnowman");
-body.forEach(bodyPart => {
-    bodyPart.addEventListener("click", (e) => {
-        let mouseX = e.offsetX;
-        let mouseY = e.offsetY;
-        addDot(mouseX, mouseY);
+$(document).ready(function() {
+    let body = [$("#svgUpperBody"), $("#svgLowerBody")]
+    let svgSnowman = $("#svgSnowman");
+    body.forEach(bodyPart => {
+        bodyPart.click(function(e) {
+            let mouseX = e.offsetX;
+            let mouseY = e.offsetY;
+            addDot(mouseX, mouseY);
+        });
+    });
+
+    function addDot(x, y) {
+        let dot = document.createElementNS('http://www.w3.org/2000/svg', "circle");
+        dot.setAttribute("cx", x);
+        dot.setAttribute("cy", y);
+        dot.setAttribute("r", "2");
+        dot.setAttribute("stroke", "black");
+        dot.setAttribute("stroke-width", "5");
+        svgSnowman.append(dot);
+    }
+
+    $("#svgHead").click(function(e) {
+        if ($(this).css("fill") == "rgb(255, 0, 0)") {
+            $("#svgHead").css({
+                fill: "white"
+            });
+        } else {
+            $("#svgHead").css({
+                fill: "red"
+            });
+        }
+    });
+
+    //$('#someid').attr('name', 'value');
+    var interval;
+    // Changes color of the crystals
+    $('#svgSnowman').on('mouseenter', function() {
+        interval = setInterval(function() {
+            for (var i = 1; i <= 8; i++) {
+                var crystal = "#crystal-" + i
+                $(crystal).css({
+                    fill: getRandomColor()
+                });
+            }
+        }, 100);
+    }).on('mouseleave', function() {
+        clearInterval(interval);
     });
 });
-function addDot(x, y){
-    let dot = document.createElementNS('http://www.w3.org/2000/svg',"circle");
-    dot.setAttribute("cx", x);
-    dot.setAttribute("cy", y);
-    dot.setAttribute("r", "2");
-    dot.setAttribute("stroke", "black");
-    dot.setAttribute("stroke-width", "5");
-    svgSnowman.append(dot);
+
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
 }
