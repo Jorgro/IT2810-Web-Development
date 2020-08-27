@@ -10,14 +10,19 @@ $(document).ready(function() {
             $("#documentationButton").html('Hide documentation');
 
         } else {
-            $("body,html").animate({
-                    scrollTop: 0
-                },
-                500);
-            setTimeout(() => {
-                $("#documentation").hide();
-            }, 500);
-            $("#documentationButton").html('Show documentation');
+            if (window.pageYOffset == 0) {
+                $("#documentation").hide()
+            } else {
+
+                $("body,html").animate({
+                        scrollTop: 0
+                    },
+                    500);
+                setTimeout(() => {
+                    $("#documentation").hide();
+                }, 500);
+                $("#documentationButton").html('Show documentation');
+            }
 
         }
     });

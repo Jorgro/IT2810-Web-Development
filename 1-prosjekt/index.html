@@ -11,14 +11,16 @@
 </head>
 
 <body>
-    <div class="container" id="container">
-        <div class="item-1" id="header-container">
-            <h1 id="header">Mr. Snowmans drawings</h1>
-        </div>
-        <div class="item-2 horizontal-flex-box">
+    <div id="page-container">
 
-            <!--snowman svg-->
-            <div class="item-2">
+        <div class="container content-wrap" id="container">
+
+            <div class="item-1 vertical-flex-box" id="header-container">
+                <h1 id="header">Mr. Snowmans drawings</h1>
+                <p> Hint: Try adding some buttons to the snowmen! </p>
+            </div>
+            <div class="item-2 vertical-flex-box">
+                <!--snowman svg-->
                 <svg width="200" height="200" class="svg" id="svgSnowman">
                     <!--body-->
                     <circle cx="100" cy="145" r="50" stroke="black" stroke-width="5" fill="white" id="svgLowerBody" />
@@ -53,51 +55,46 @@
                 </svg>
                 <h3>Winter Wonderland (SVG)</h3>
             </div>
-        </div>
-        <!--snowman canvas-->
-        <div class="item-3 horizontal-flex-box">
+            <!--snowman canvas-->
+            <div class="item-3 horizontal-flex-box">
+                <div class="center">
+                    <canvas class="center" id="snowmanCanvas" width="200" height="200"></canvas>
+                    <h3>Winter Wonderland (Canvas)</h3>
+                </div>
+            </div>
+            <div class="item-4">
+                <button id="documentationButton">Show documentation</button>
+            </div>
+            <div class="item-5" id="documentation">
+                <p> I am documentation </p>
+                <p> I am documentation </p>
+                <p> I am documentation </p>
+                <p> I am documentation </p>
+                <p> I am documentation </p>
+                <p> I am documentation </p>
+                <p> I am documentation </p>
+                <p> I am documentation </p>
+                <p> I am documentation </p>
+                <p> I am documentation </p>
+                <p> I am documentation </p>
+                <p> I am documentation </p>
+                <p> I am documentation </p>
+                <p> I am documentation </p>
+                <p> I am documentation </p>
+                <p> I am documentation </p>
+                <p> I am documentation </p>
+                <p> I am documentation </p>
+                <p> I am documentation </p>
+                <p> I am documentation </p>
+                <p> I am documentation </p>
+                <p> I am documentation </p>
+                <p> I am documentation </p>
+                <p> I am documentation </p>
+                <p> I am documentation </p>
+                <p> I am documentation </p>
 
-            <div>
-                <canvas id="snowmanCanvas" width="200" height="200"></canvas>
-                <h3>Winter Wonderland (Canvas)</h3>
             </div>
         </div>
-        <div class="item-4 flex-box">
-            <button id="documentationButton">Show documentation</button>
-        </div>
-        <div class="item-5 flex-box" id="documentation">
-            <p> I am documentation </p>
-            <p> I am documentation </p>
-            <p> I am documentation </p>
-            <p> I am documentation </p>
-            <p> I am documentation </p>
-            <p> I am documentation </p>
-            <p> I am documentation </p>
-            <p> I am documentation </p>
-            <p> I am documentation </p>
-            <p> I am documentation </p>
-            <p> I am documentation </p>
-            <p> I am documentation </p>
-            <p> I am documentation </p>
-            <p> I am documentation </p>
-            <p> I am documentation </p>
-            <p> I am documentation </p>
-            <p> I am documentation </p>
-            <p> I am documentation </p>
-            <p> I am documentation </p>
-            <p> I am documentation </p>
-            <p> I am documentation </p>
-            <p> I am documentation </p>
-            <p> I am documentation </p>
-            <p> I am documentation </p>
-            <p> I am documentation </p>
-            <p> I am documentation </p>
-
-        </div>
-    </div>
-
-    <div class="footer">
-        <p>Hint: Try clicking on the Snowmans body to create some buttons!</p>
     </div>
 </body>
 
