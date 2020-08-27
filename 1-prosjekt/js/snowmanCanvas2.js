@@ -92,11 +92,11 @@ $(document).ready(function() {
             drawDot(mouseX, mouseY, 4);
         } else if (intersects(mouseX, mouseY, head)) {
             if (alternate) {
-                drawHead("red", 3);
+                drawHead("red", 4);
                 alternate = false;
 
             } else {
-                drawHead("white", 3);
+                drawHead("white", 4);
                 alternate = true;
             }
         }
@@ -119,6 +119,7 @@ $(document).ready(function() {
 
 
     function drawDot(x, y, size) {
+        ctx.lineWidth = 1;
         ctx.beginPath();
         ctx.moveTo(x, y);
         ctx.arc(x, y, size, 0, 2 * Math.PI);
@@ -130,6 +131,7 @@ $(document).ready(function() {
 
     function drawHead(color, size) {
         // head shape
+        ctx.lineWidth = 10;
         ctx.beginPath();
         ctx.moveTo(120, 30);
         ctx.arc(head.x, head.y, head.radius, 0, 2 * Math.PI);
@@ -155,21 +157,28 @@ $(document).ready(function() {
     }
 
     function drawGround() {
+        ctx.beginPath();
         ctx.fillStyle = 'blue';
         ctx.fillRect(0, 196, 200, 4);
+        ctx.closePath();
     }
 
     function drawBody() {
+        ctx.beginPath();
         ctx.arc(lowerBody.x, lowerBody.y, lowerBody.radius, (26 / 15) * Math.PI, (19 / 15) * Math.PI);
         ctx.stroke();
+        ctx.closePath();
 
+        ctx.beginPath();
         ctx.moveTo(115, 45);
         ctx.arc(upperBody.x, upperBody.y, upperBody.radius, (24 / 15) * Math.PI, (21 / 15) * Math.PI);
         ctx.stroke();
+        ctx.closePath();
     }
 
     function drawArms() {
         //left arm
+        ctx.beginPath();
         ctx.moveTo(65, 65);
         ctx.lineTo(25, 45);
         ctx.stroke();
@@ -177,8 +186,10 @@ $(document).ready(function() {
         ctx.lineTo(45, 55);;
         ctx.lineTo(30, 35);
         ctx.stroke();
+        ctx.closePath();
 
         //right arm
+        ctx.beginPath();
         ctx.moveTo(135, 65);
         ctx.lineTo(175, 45);
         ctx.stroke();
@@ -186,13 +197,14 @@ $(document).ready(function() {
         ctx.lineTo(155, 55);;
         ctx.lineTo(170, 35);
         ctx.stroke();
+        ctx.closePath();
     }
 
     function drawSnowman() {
         drawBody();
         drawArms();
+        drawHead("white", 4);
         drawGround();
-        drawHead("white", 1);
     }
 
     function drawCrystals(random) {
