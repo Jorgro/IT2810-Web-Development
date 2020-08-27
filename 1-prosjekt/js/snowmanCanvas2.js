@@ -219,7 +219,7 @@ $(document).ready(function() {
             if (random) {
                 ctx.fillStyle = getRandomColor();
             } else {
-                ctx.fillStyle = "lightblue";
+                ctx.fillStyle = "blue";
 
             }
             ctx.fill();

@@ -26,6 +26,10 @@ $(document).ready(function() {
 
         }
     });
+    $("#resetButton").click(function() {
+        location.reload(true);
+
+    })
 
     var originalPosition;
     // Used to make documentation button stick to top when scrolling down!
