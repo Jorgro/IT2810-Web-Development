@@ -10,19 +10,15 @@ $(document).ready(function() {
             $("#documentationButton").html('Hide documentation');
 
         } else {
-            if (window.pageYOffset == 0) {
-                $("#documentation").hide()
-            } else {
-
-                $("body,html").animate({
-                        scrollTop: 0
-                    },
-                    400);
-                setTimeout(() => {
-                    $("#documentation").hide();
-                }, 600);
-                $("#documentationButton").html('Show documentation');
-            }
+            console.log('window.pageYOffset', window.pageYOffset)
+            $("body,html").animate({
+                    scrollTop: 0
+                },
+                window.pageYOffset);
+            setTimeout(() => {
+                $("#documentation").hide();
+            }, window.pageYOffset);
+            $("#documentationButton").html('Show documentation');
 
         }
     });
