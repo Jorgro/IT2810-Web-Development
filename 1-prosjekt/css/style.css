@@ -90,6 +90,7 @@ p {
 
 button {
     background-color: #00abfa;
+    border: none;
     color: rgb(255, 255, 255);
     text-align: center;
     text-decoration: none;
@@ -99,6 +100,7 @@ button {
     min-width: 40px;
     height: 40px;
     border-radius: 12px;
+    outline: 0;
 }
 
 button:hover {
