@@ -10,7 +10,6 @@ $(document).ready(function() {
             $("#documentationButton").html('Hide documentation');
 
         } else {
-            console.log('window.pageYOffset', window.pageYOffset)
             $("body,html").animate({
                     scrollTop: 0
                 },
