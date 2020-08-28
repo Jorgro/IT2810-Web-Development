@@ -17,10 +17,10 @@ $(document).ready(function() {
                 $("body,html").animate({
                         scrollTop: 0
                     },
-                    500);
+                    400);
                 setTimeout(() => {
                     $("#documentation").hide();
-                }, 500);
+                }, 600);
                 $("#documentationButton").html('Show documentation');
             }
 
