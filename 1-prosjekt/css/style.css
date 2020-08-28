@@ -90,7 +90,6 @@ p {
 
 button {
     background-color: #00abfa;
-    border: black;
     color: rgb(255, 255, 255);
     text-align: center;
     text-decoration: none;
@@ -100,6 +99,12 @@ button {
     min-width: 40px;
     height: 40px;
     border-radius: 12px;
+}
+
+button:hover {
+    background-color: #ffffff;
+    border: 2px solid #00abfa;
+    color: #00abfa;
 }
 
 .sticky {
